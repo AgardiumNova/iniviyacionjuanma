@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#071226">
+  <meta name="description"
+        content="¡Estás invitado al cumpleaños de Juan Manuel en el Parque del Café!">
   <title>¡Cumpleaños de Juan Manuel!</title>
 
   <style>
@@ -15,9 +17,13 @@
       --suave: #bac8e1;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -27,15 +33,20 @@
       line-height: 1.6;
     }
 
-    a { color: inherit; }
+    a {
+      color: inherit;
+    }
 
-    a:focus-visible {
+    a:focus-visible,
+    input:focus-visible,
+    button:focus-visible,
+    summary:focus-visible {
       outline: 3px solid var(--celeste);
       outline-offset: 5px;
     }
 
     .portada {
-      min-height: 420px;
+      min-height: 380px;
       height: 65vh;
       max-height: 680px;
       position: relative;
@@ -59,6 +70,7 @@
         rgba(7, 18, 38, .55) 60%,
         var(--fondo)
       );
+      pointer-events: none;
     }
 
     .portada-texto {
@@ -125,15 +137,29 @@
       font-size: 19px;
     }
 
+    .acciones {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 25px;
+    }
+
     .boton {
-      display: inline-block;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 50px;
       padding: 14px 26px;
-      margin-top: 15px;
+      border: 0;
       border-radius: 10px;
       background: var(--azul);
       color: white;
+      font: inherit;
       font-weight: bold;
       text-decoration: none;
+      text-align: center;
+      cursor: pointer;
       box-shadow: 0 10px 35px #2864ff35;
       transition: transform .2s, background .2s;
     }
@@ -141,6 +167,15 @@
     .boton:hover {
       background: #4378ff;
       transform: translateY(-3px);
+    }
+
+    .boton-whatsapp {
+      background: #167c45;
+      box-shadow: 0 10px 35px #167c4535;
+    }
+
+    .boton-whatsapp:hover {
+      background: #1a9151;
     }
 
     .franja {
@@ -165,7 +200,9 @@
       margin: 12px 0 22px;
     }
 
-    .centrado { text-align: center; }
+    .centrado {
+      text-align: center;
+    }
 
     .detalles {
       display: grid;
@@ -226,7 +263,9 @@
       transition: transform .4s;
     }
 
-    figure:hover img { transform: scale(1.03); }
+    figure:hover img {
+      transform: scale(1.03);
+    }
 
     figcaption {
       padding: 20px;
@@ -235,7 +274,7 @@
     }
 
     .mensaje {
-      padding: 70px 24px;
+      padding: 60px 24px;
       text-align: center;
       background: linear-gradient(135deg, #173a80, #0c1b37);
       border-radius: 22px;
@@ -255,6 +294,49 @@
       font-style: italic;
     }
 
+    .confirmacion {
+      max-width: 600px;
+      margin: 35px auto 0;
+      padding: 28px;
+      border: 1px solid #ffffff30;
+      border-radius: 16px;
+      background: #07122670;
+      text-align: left;
+    }
+
+    .confirmacion label {
+      display: block;
+      margin-bottom: 9px;
+      font-weight: bold;
+    }
+
+    .confirmacion input {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #ffffff55;
+      border-radius: 8px;
+      background: #071226;
+      color: white;
+      font: inherit;
+      margin-bottom: 20px;
+    }
+
+    .confirmacion input::placeholder {
+      color: #aab8d0;
+    }
+
+    .confirmacion .boton {
+      width: 100%;
+    }
+
+    .confirmacion .nota {
+      font-size: 13px;
+      margin: 16px 0 0;
+      color: var(--suave);
+      text-align: center;
+    }
+
     footer {
       padding: 30px 6%;
       text-align: center;
@@ -267,14 +349,22 @@
       margin-top: 15px;
     }
 
-    footer summary { cursor: pointer; }
+    footer summary {
+      cursor: pointer;
+    }
 
-    footer a { margin: 0 7px; }
+    footer a {
+      margin: 0 7px;
+    }
 
     .aviso-foto {
       padding: 25px;
       color: var(--suave);
       text-align: center;
+    }
+
+    img[hidden] {
+      display: none !important;
     }
 
     @media (max-width: 700px) {
@@ -283,33 +373,48 @@
         height: 52vh;
       }
 
-      h1 { letter-spacing: -2px; }
+      h1 {
+        letter-spacing: -2px;
+      }
 
       .detalles,
       .galeria {
         grid-template-columns: 1fr;
       }
 
-      .contenedor { padding: 50px 0; }
+      .contenedor {
+        padding: 50px 0;
+      }
 
-      figure img { height: 270px; }
+      figure img {
+        height: 270px;
+      }
 
       .franja {
         font-size: 10px;
         letter-spacing: 2px;
       }
+
+      .confirmacion {
+        padding: 22px 16px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      * { transition: none !important; }
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        transition: none !important;
+      }
     }
   </style>
 </head>
 
 <body>
   <main>
-    <!-- FOTO INICIAL DEL PARQUE DEL CAFÉ -->
+    <!-- FOTO INICIAL -->
     <section class="portada" aria-label="Parque del Café">
       <img
         src="https://cloudfront-us-east-1.images.arcpublishing.com/prisaradioco/4QZWM76A6RE4ZGS4UEBEKY5BDU.jpg"
@@ -325,7 +430,7 @@
       </div>
     </section>
 
-    <!-- NOMBRE DEL CUMPLEAÑERO -->
+    <!-- PRESENTACIÓN -->
     <section class="presentacion">
       <div class="convocatoria">⚽ ¡ESTÁS CONVOCADO!</div>
 
@@ -341,18 +446,27 @@
         risas y aventuras en el Parque del Café!
       </p>
 
-      <a class="boton" href="#detalles">Descubre el plan ↓</a>
+      <div class="acciones">
+        <a class="boton" href="#detalles">
+          Descubre el plan ↓
+        </a>
+
+        <a class="boton boton-whatsapp" href="#confirmar">
+          Confirmar asistencia
+        </a>
+      </div>
     </section>
 
     <div class="franja">
       UN EQUIPO · MIL RISAS · UN CUMPLEAÑOS INOLVIDABLE
     </div>
 
-    <!-- EDITA AQUÍ LA FECHA Y LA HORA -->
+    <!-- CAMBIA AQUÍ LA FECHA Y LA HORA -->
     <section class="contenedor" id="detalles">
       <div class="centrado">
         <p class="etiqueta">Una invitación especial para ti</p>
         <h2 class="titulo">La aventura es mejor si vienes tú.</h2>
+
         <p class="descripcion">
           Prepárate para compartir momentos increíbles
           y crear recuerdos que nos acompañen siempre.
@@ -391,7 +505,7 @@
       </div>
     </section>
 
-    <!-- FOTOS DEL PARQUE -->
+    <!-- GALERÍA -->
     <section class="contenedor" style="padding-top: 0;">
       <p class="etiqueta">Nuestro escenario</p>
       <h2 class="titulo">¡Emociones a otro nivel!</h2>
@@ -443,7 +557,8 @@
       </div>
     </section>
 
-    <section class="contenedor" style="padding-top: 0;">
+    <!-- CONFIRMACIÓN POR WHATSAPP -->
+    <section class="contenedor" id="confirmar" style="padding-top: 0;">
       <div class="mensaje">
         <div class="etiqueta">Tú haces parte de mi equipo</div>
         <h2 class="titulo">¡Te espero para celebrar!</h2>
@@ -456,7 +571,49 @@
 
         <div class="firma">— Juan Manuel</div>
 
-        <a class="boton" href="#detalles">Ver los detalles ↑</a>
+        <form
+          class="confirmacion"
+          action="https://wa.me/573158403581"
+          method="get"
+          target="_blank"
+          rel="noopener noreferrer"
+          id="formulario-confirmacion"
+        >
+          <label for="nombre">¿Cómo te llamas?</label>
+
+          <input
+            id="nombre"
+            type="text"
+            placeholder="Escribe tu nombre"
+            autocomplete="name"
+            maxlength="100"
+            required
+          >
+
+          <input
+            type="hidden"
+            name="text"
+            id="mensaje-whatsapp"
+            value="¡Hola! Confirmo mi asistencia al cumpleaños de Juan Manuel en el Parque del Café. Mi nombre es: "
+          >
+
+          <button class="boton boton-whatsapp" type="submit">
+            Confirmar por WhatsApp ↗
+          </button>
+
+          <p class="nota">
+            Se abrirá WhatsApp con tu mensaje preparado.
+            Pulsa <strong>Enviar</strong> para que tu confirmación
+            llegue al <strong>315 840 3581</strong>.
+          </p>
+
+          <noscript>
+            <p class="nota">
+              Escribe también tu nombre en el mensaje de WhatsApp
+              antes de enviarlo.
+            </p>
+          </noscript>
+        </form>
       </div>
     </section>
   </main>
@@ -466,45 +623,81 @@
 
     <details>
       <summary>Créditos de las fotografías</summary>
+
       <p>
         <a
           href="https://caracol.com.co/2024/10/09/en-el-quindio-impulsan-campana-para-fortalecer-parques-tematicos/"
-          target="_blank" rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
         >Caracol Radio</a>
 
         <a
           href="https://commons.wikimedia.org/wiki/File:TELEFERICO_DEL_PARQUE_DEL_CAFE,_en_Montenegro,_Quind%C3%ADo.JPG"
-          target="_blank" rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
         >Wikimedia: autor y licencia</a>
 
         <a
           href="https://rcdb.com/15956.htm"
-          target="_blank" rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
         >RCDB</a>
 
         <a
           href="https://caroroble.blogspot.com/2012/10/blog-post.html"
-          target="_blank" rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
         >Dándole una vueltica al mundo</a>
 
         <a
           href="https://colombiaturisticos.blogspot.com/2012/07/montenegro-parque-del-cafe.html"
-          target="_blank" rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
         >Sitios turísticos de Colombia</a>
       </p>
 
       <p>
         Invitación personal, sin afiliación con el parque.
-        Las fotografías se cargan desde sitios externos.
+        Las fotografías se cargan desde sitios externos
+        y requieren conexión a internet.
       </p>
     </details>
   </footer>
 
   <script>
-    // Muestra un aviso si un sitio externo no permite cargar su foto.
+    // Prepara la confirmación con el nombre del invitado.
+    const formulario = document.getElementById(
+      "formulario-confirmacion"
+    );
+
+    const campoNombre = document.getElementById("nombre");
+    const campoMensaje = document.getElementById("mensaje-whatsapp");
+
+    campoNombre.addEventListener("input", function () {
+      campoNombre.setCustomValidity("");
+    });
+
+    formulario.addEventListener("submit", function (evento) {
+      const nombre = campoNombre.value.trim();
+
+      if (!nombre) {
+        evento.preventDefault();
+        campoNombre.setCustomValidity("Por favor, escribe tu nombre.");
+        campoNombre.reportValidity();
+        return;
+      }
+
+      campoMensaje.value =
+        "¡Hola! Soy " + nombre +
+        " y confirmo mi asistencia al cumpleaños de Juan Manuel" +
+        " en el Parque del Café. 🎉 ¡Nos vemos para celebrar!";
+    });
+
+    // Muestra un aviso si una foto externa no está disponible.
     document.querySelectorAll("img").forEach(function (imagen) {
       function mostrarAviso() {
         if (imagen.dataset.errorMostrado) return;
+
         imagen.dataset.errorMostrado = "true";
 
         const aviso = document.createElement("p");
